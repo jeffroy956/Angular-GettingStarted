@@ -14,3 +14,19 @@ ng g m products/product --flat -m app.module
 ng generate module
 
 ng g m shared/shared --flat -m products/product.module
+
+(generate a new applications, default prefix/folder is app if unspecified:)
+ng new hello-work --prefix hw
+
+
+ng generate commands:
+
+ng generate class           //ts class
+ng generate component       //UI component
+ng generate directive       //custom element or attribute to extend html  (think *ngIf built-in structural directive)
+ng generate enum            //ts enum
+ng generate guard           //routing guard
+ng generate interface       //ts interface
+ng generate module          //modules to encapsulate subsystem, core helpers
+ng generate pipe            //filters, formatters |
+ng generate service         //data access
