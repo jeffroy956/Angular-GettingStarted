@@ -1,0 +1,13 @@
+import { CanActivate } from "@angular/router";
+import { Injectable } from "@angular/core";
+
+@Injectable()
+export class ProductGuardService implements CanActivate {
+    // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+    //     throw new Error("Method not implemented.");
+    // }
+
+    canActivate(): boolean {
+        return true;
+    }
+}

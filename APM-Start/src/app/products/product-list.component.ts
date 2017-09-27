@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
 
 @Component({
-    selector: "pm-products",
+    // selector: "pm-products",
     templateUrl: "./product-list.component.html",
     styleUrls: ["./product-list.component.css"]
 })
@@ -20,6 +20,7 @@ export class ProductListComponent implements OnInit {
     showImage: boolean = false;
 
     filteredProducts: IProduct[];
+    errorMessage: any;
 
     _listFilter: string;
     get listFilter(): string {
@@ -41,10 +42,16 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this._productService.getProducts().subscribe(products => {
-        this.products = products;
-        this.filteredProducts = this.products;
-      });
+      this._productService.getProducts().subscribe(
+          products => 
+          { 
+            this.products = products;
+            this.filteredProducts = this.products;
+          },
+          error => {
+            this.errorMessage = <any>error;
+          }
+        );
     }
 
     onRatingClicked(message: string): void {
